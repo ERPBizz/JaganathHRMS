@@ -1,0 +1,479 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82A094CE-2BF2-457C-83EB-739BFFB97C48}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BizzManWebErp</RootNamespace>
+    <AssemblyName>BizzManWebErp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.4\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\alertify.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\jquery.dataTables.min.css" />
+    <Content Include="css\select2.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Scripts\FaWarehouseMaster.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\HrBranchMasterNew.js" />
+    <Content Include="Images\CompanyLogo.png" />
+    <Content Include="Images\images.jpg" />
+    <Content Include="Scripts\MmCategoryMaster.js" />
+    <Content Include="Scripts\MmMaterialMaster.js" />
+    <Content Include="Scripts\bootstrap-timepicker.js" />
+    <Content Include="Scripts\buttons.dataTables.min.css" />
+    <Content Include="Scripts\buttons.html5.min.js" />
+    <Content Include="Scripts\CategoryMaster.js" />
+    <Content Include="Scripts\dataTables.buttons.min.js" />
+    <Content Include="Scripts\EmployeeAttendance.js" />
+    <Content Include="Scripts\EmployeeCTCMaster.js" />
+    <Content Include="Scripts\EmployeeSalaryGrade.js" />
+    <Content Include="Scripts\EmployeeSaleryApprove.js" />
+    <Content Include="Scripts\EmployeeSaleryGenerate.js" />
+    <Content Include="Scripts\html2canvas.min.js" />
+    <Content Include="Scripts\jszip.min.js" />
+    <Content Include="Scripts\alertify.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\EmployeeTransaction.js" />
+    <Content Include="Scripts\EmpMaster.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\pdfmake.min.js" />
+    <Content Include="Scripts\select2.min.js" />
+    <Content Include="css\SidebarMenu.css" />
+    <Content Include="Web.config" />
+    <Content Include="wfCrmMain.aspx" />
+    <Content Include="wfMmMaterialPurchaseGateInword.aspx" />
+    <Content Include="wfMmVendorMaster.aspx" />
+    <Content Include="wfSdMain.aspx" />
+    <Content Include="wfErpMain.aspx" />
+    <Content Include="wfFaAccountsGroupMaster.aspx" />
+    <Content Include="wfFaLedgerMaster.aspx" />
+    <Content Include="wfFaWarehouseMaster.aspx" />
+    <Content Include="wfHrBranchMaster.aspx" />
+    <Content Include="wfHrBranchMasterNew.aspx" />
+    <Content Include="wfHrEmpCtcMaster.aspx" />
+    <Content Include="wfHrEmpSalaryApprove.aspx" />
+    <Content Include="wfHrEmpSalaryGrade.aspx" />
+    <Content Include="wfHrEmpSalaryGrnerate.aspx" />
+    <Content Include="wfFaMainMenu.aspx" />
+    <Content Include="wfHrDesignationMaster.aspx" />
+    <Content Include="wfHrDeptMaster.aspx" />
+    <Content Include="wfHrEmpAttendance.aspx" />
+    <Content Include="wfHrEmpMasterTransection.aspx" />
+    <Content Include="wfHrEsiMaster.aspx" />
+    <Content Include="wfHrPfMaster.aspx" />
+    <Content Include="wfHrEmpMaster.aspx" />
+    <Content Include="wfHrHrmsMain.aspx" />
+    <Content Include="wfAdminLogin.aspx" />
+    <Content Include="wfMmCategoryMaster.aspx" />
+    <Content Include="wfMmMainMenu.aspx" />
+    <Content Include="wfMmMaterialIndentMaster.aspx" />
+    <Content Include="wfMmMaterialMaster.aspx" />
+    <Content Include="wfMmMaterialPurchaseOrderEntry.aspx" />
+    <Content Include="wfMmPurchaseQuotationEntry.aspx" />
+    <Content Include="wfMmRequisitionNote.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsMain.cs" />
+    <Compile Include="CrmMainMenu.Master.cs">
+      <DependentUpon>CrmMainMenu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrmMainMenu.Master.designer.cs">
+      <DependentUpon>CrmMainMenu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FaMainMenu.Master.cs">
+      <DependentUpon>FaMainMenu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FaMainMenu.Master.designer.cs">
+      <DependentUpon>FaMainMenu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FileUploadHandler.ashx.cs">
+      <DependentUpon>FileUploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="MmMainMenu.Master.cs">
+      <DependentUpon>MmMainMenu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MmMainMenu.Master.designer.cs">
+      <DependentUpon>MmMainMenu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CommonModel.cs" />
+    <Compile Include="Model\Quotation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SdMainMenu.Master.cs">
+      <DependentUpon>SdMainMenu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SdMainMenu.Master.designer.cs">
+      <DependentUpon>SdMainMenu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="wfCrmMain.aspx.cs">
+      <DependentUpon>wfCrmMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfCrmMain.aspx.designer.cs">
+      <DependentUpon>wfCrmMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfMmMaterialPurchaseGateInword.aspx.cs">
+      <DependentUpon>wfMmMaterialPurchaseGateInword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfMmMaterialPurchaseGateInword.aspx.designer.cs">
+      <DependentUpon>wfMmMaterialPurchaseGateInword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfMmVendorMaster.aspx.cs">
+      <DependentUpon>wfMmVendorMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfMmVendorMaster.aspx.designer.cs">
+      <DependentUpon>wfMmVendorMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfSdMain.aspx.cs">
+      <DependentUpon>wfSdMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfSdMain.aspx.designer.cs">
+      <DependentUpon>wfSdMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfErpMain.aspx.cs">
+      <DependentUpon>wfErpMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfErpMain.aspx.designer.cs">
+      <DependentUpon>wfErpMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfFaAccountsGroupMaster.aspx.cs">
+      <DependentUpon>wfFaAccountsGroupMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfFaAccountsGroupMaster.aspx.designer.cs">
+      <DependentUpon>wfFaAccountsGroupMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfFaLedgerMaster.aspx.cs">
+      <DependentUpon>wfFaLedgerMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfFaLedgerMaster.aspx.designer.cs">
+      <DependentUpon>wfFaLedgerMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfFaWarehouseMaster.aspx.cs">
+      <DependentUpon>wfFaWarehouseMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfFaWarehouseMaster.aspx.designer.cs">
+      <DependentUpon>wfFaWarehouseMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrBranchMaster.aspx.cs">
+      <DependentUpon>wfHrBranchMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrBranchMaster.aspx.designer.cs">
+      <DependentUpon>wfHrBranchMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrBranchMasterNew.aspx.cs">
+      <DependentUpon>wfHrBranchMasterNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrBranchMasterNew.aspx.designer.cs">
+      <DependentUpon>wfHrBranchMasterNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrEmpCtcMaster.aspx.cs">
+      <DependentUpon>wfHrEmpCtcMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrEmpCtcMaster.aspx.designer.cs">
+      <DependentUpon>wfHrEmpCtcMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrEmpSalaryApprove.aspx.cs">
+      <DependentUpon>wfHrEmpSalaryApprove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrEmpSalaryApprove.aspx.designer.cs">
+      <DependentUpon>wfHrEmpSalaryApprove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrEmpSalaryGrade.aspx.cs">
+      <DependentUpon>wfHrEmpSalaryGrade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrEmpSalaryGrade.aspx.designer.cs">
+      <DependentUpon>wfHrEmpSalaryGrade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrEmpSalaryGrnerate.aspx.cs">
+      <DependentUpon>wfHrEmpSalaryGrnerate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrEmpSalaryGrnerate.aspx.designer.cs">
+      <DependentUpon>wfHrEmpSalaryGrnerate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfFaMainMenu.aspx.cs">
+      <DependentUpon>wfFaMainMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfFaMainMenu.aspx.designer.cs">
+      <DependentUpon>wfFaMainMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrDesignationMaster.aspx.cs">
+      <DependentUpon>wfHrDesignationMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrDesignationMaster.aspx.designer.cs">
+      <DependentUpon>wfHrDesignationMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrDeptMaster.aspx.cs">
+      <DependentUpon>wfHrDeptMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrDeptMaster.aspx.designer.cs">
+      <DependentUpon>wfHrDeptMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrEmpAttendance.aspx.cs">
+      <DependentUpon>wfHrEmpAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrEmpAttendance.aspx.designer.cs">
+      <DependentUpon>wfHrEmpAttendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrEmpMasterTransection.aspx.cs">
+      <DependentUpon>wfHrEmpMasterTransection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrEmpMasterTransection.aspx.designer.cs">
+      <DependentUpon>wfHrEmpMasterTransection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrEsiMaster.aspx.cs">
+      <DependentUpon>wfHrEsiMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrEsiMaster.aspx.designer.cs">
+      <DependentUpon>wfHrEsiMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrPfMaster.aspx.cs">
+      <DependentUpon>wfHrPfMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrPfMaster.aspx.designer.cs">
+      <DependentUpon>wfHrPfMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrEmpMaster.aspx.cs">
+      <DependentUpon>wfHrEmpMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrEmpMaster.aspx.designer.cs">
+      <DependentUpon>wfHrEmpMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfHrHrmsMain.aspx.cs">
+      <DependentUpon>wfHrHrmsMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfHrHrmsMain.aspx.designer.cs">
+      <DependentUpon>wfHrHrmsMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfAdminLogin.aspx.cs">
+      <DependentUpon>wfAdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfAdminLogin.aspx.designer.cs">
+      <DependentUpon>wfAdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfMmCategoryMaster.aspx.cs">
+      <DependentUpon>wfMmCategoryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfMmCategoryMaster.aspx.designer.cs">
+      <DependentUpon>wfMmCategoryMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfMmMainMenu.aspx.cs">
+      <DependentUpon>wfMmMainMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfMmMainMenu.aspx.designer.cs">
+      <DependentUpon>wfMmMainMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfMmMaterialIndentMaster.aspx.cs">
+      <DependentUpon>wfMmMaterialIndentMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfMmMaterialIndentMaster.aspx.designer.cs">
+      <DependentUpon>wfMmMaterialIndentMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfMmMaterialMaster.aspx.cs">
+      <DependentUpon>wfMmMaterialMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfMmMaterialMaster.aspx.designer.cs">
+      <DependentUpon>wfMmMaterialMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfMmMaterialPurchaseOrderEntry.aspx.cs">
+      <DependentUpon>wfMmMaterialPurchaseOrderEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfMmMaterialPurchaseOrderEntry.aspx.designer.cs">
+      <DependentUpon>wfMmMaterialPurchaseOrderEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfMmPurchaseQuotationEntry.aspx.cs">
+      <DependentUpon>wfMmPurchaseQuotationEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfMmPurchaseQuotationEntry.aspx.designer.cs">
+      <DependentUpon>wfMmPurchaseQuotationEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfMmRequisitionNote.aspx.cs">
+      <DependentUpon>wfMmRequisitionNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfMmRequisitionNote.aspx.designer.cs">
+      <DependentUpon>wfMmRequisitionNote.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bootstrap.less" />
+    <Content Include="FileUploadHandler.ashx" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="FaMainMenu.Master" />
+    <Content Include="MmMainMenu.Master" />
+    <Content Include="CrmMainMenu.Master" />
+    <None Include="packages.config" />
+    <Content Include="SdMainMenu.Master" />
+    <Content Include="Site1.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62680</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62680/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
